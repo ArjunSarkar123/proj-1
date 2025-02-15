@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Naxalite (Raj) FF-Page</title>
+    <link rel="stylesheet" href="res.css">
+</head>
+<body>
+    <div class="content-container">
+        <h2>Welcome to Your Personalized Page</h2>
+
+        <div class="user-info">
+            <!-- Display the user's name and date of birth -->
+            <p id="userGreeting"></p>
+
+            <!-- Image Display -->
+            <img id="userImage" src="./ff.jpg" alt="Personalized Image">
+
+            <p>Your information is below:</p>
+            <ul>
+                <li><strong>Name:</strong> <span id="nameDisplay"></span></li>
+                <li><strong>Date of Birth:</strong> <span id="dobDisplay"></span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve data from localStorage
+        const name = localStorage.getItem("userName");
+        const dob = localStorage.getItem("userDob");
+
+        // Display the user data
+        document.getElementById("nameDisplay").textContent = name;
+        document.getElementById("dobDisplay").textContent = dob;
+
+        // Create a personalized greeting
+        const greetingMessage = `Hello, ${name}! You were born on ${dob}. Welcome to your personalized page!`;
+        document.getElementById("userGreeting").textContent = greetingMessage;
+    </script>
+</body>
+</html>
